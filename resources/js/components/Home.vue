@@ -13,7 +13,7 @@
         </div>
 
         <footer class="bg-pink-300 w-full py-3 text-sm text-white text-center fixed bottom-0">
-            &copy; 2024 Wanda's Cute Clothing Line. All rights reserved.
+            &copy; 2024 Wanda's Cute Clothing Line. All rights reserved.October
         </footer>
     </div>
 </template>
