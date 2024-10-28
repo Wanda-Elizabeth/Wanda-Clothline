@@ -20,7 +20,7 @@ const AboutUs = () => import("../components/About/AboutUs.vue")
      },
 
      {
-         path:"/landing-page",
+         path:"/",
          name:"Landing-Page",
          component: LandingPage,
      },

@@ -7,7 +7,15 @@ export default {
         './resources/**/*.{html,js,vue}',
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                roboto: ['Roboto', 'sans-serif'],
+                openSans: ['Open Sans', 'sans-serif'],
+                unito: ['Nunito', 'sans-serif'], // Add Nunito here
+                sixtyfour: ['Sixtyfour Convergence', 'sans-serif'],
+            },
+
+        },
     },
     plugins: [],
 };
