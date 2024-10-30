@@ -21,20 +21,23 @@
             </div>
         </header>
 
-        <div v-if="isMenuOpen" class="lg:hidden bg-black bg-opacity-75 navbar-collapse w-full py-2 transition-all duration-300">
-            <nav class="flex flex-col items-start">
-                <router-link to="/" class="text-white hover:text-pink-700 py-2">Home</router-link>
-                <router-link to="/about-us" class="text-white hover:text-pink-700 py-2">About Us</router-link>
-                <router-link to="/products" class="text-white hover:text-pink-700 py-2">Products</router-link>
-                <router-link to="/contactus" class="text-white hover:text-pink-700 py-2">Contact Us</router-link>
-            </nav>
+        <div v-if="isMenuOpen" class="lg:hidden w-full py-2 transition-all duration-300 relative">
+            <div class="absolute inset-0 bg-pink-300 blur-2xl"></div>
+            <div class="relative z-10 navbar-collapse">
+                <nav class="flex flex-col items-start">
+                    <router-link to="/" class="text-white hover:text-pink-700 py-2">Home</router-link>
+                    <router-link to="/about-us" class="text-white hover:text-pink-700 py-2">About Us</router-link>
+                    <router-link to="/products" class="text-white hover:text-pink-700 py-2">Products</router-link>
+                    <router-link to="/contactus" class="text-white hover:text-pink-700 py-2">Contact Us</router-link>
+                </nav>
+            </div>
         </div>
 
         <router-view class="mb-4"></router-view>
 
-        <footer class="bg-pink-300 w-full py-3 text-sm text-white text-center fixed bottom-0">
-            &copy; 2024 Wanda's Cute Clothing Line. All rights reserved. October
-        </footer>
+<!--        <footer class="bg-pink-300 w-full py-3 text-sm text-white text-center fixed bottom-0">-->
+<!--            &copy; 2024 Wanda's Cute Clothing Line. All rights reserved. October-->
+<!--        </footer>-->
     </div>
 </template>
 
