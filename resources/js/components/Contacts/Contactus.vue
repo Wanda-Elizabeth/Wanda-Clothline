@@ -80,9 +80,33 @@
 </template>
 
 <script>
+
+import axios from "axios";
 export default {
+
+    data() {
+        return {
+            form :{
+                first_name:'',
+                last_name: '',
+                email:'',
+                phone:'',
+                subject:'',
+                message:''
+            }
+        }
+    },
+
     methods: {
-        submitFormDetails() {
+        async submitFormDetails() {
+            try {
+                const response = await axios.post('/api/contact/submit', this.form);
+                alert(response.data.message);
+                this.form = {name: '', last_name: '', email: '', phone: '', subject: '', message: ''};
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Failed to send the message. Please try again.');
+            }
         }
     }
 }
