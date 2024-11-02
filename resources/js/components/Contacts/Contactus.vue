@@ -106,6 +106,7 @@ export default {
             successMessage: '',
             loading: false
         };
+        
     },
 
     methods: {
