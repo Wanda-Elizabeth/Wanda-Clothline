@@ -114,7 +114,6 @@ export default {
             this.loading = true;
             try {
                  axios.post('/api/contact/submit', this.form);
-                console.log(response.data.message);
 
                 this.form = {
                     first_name: '',
