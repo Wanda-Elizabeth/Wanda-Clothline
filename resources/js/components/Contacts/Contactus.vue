@@ -1,6 +1,5 @@
 <template>
     <div class="h-screen w-full flex flex-col">
-        <!-- Top Section with Contact Title and Breadcrumb -->
         <div class="flex flex-col items-center bg-gray-900 py-8 text-white">
             <h2 class="text-4xl font-bold">Contact Us</h2>
             <p class="text-sm text-gray-400 mt-2">We’d love to hear from you! Let’s connect.</p>
@@ -24,6 +23,7 @@
                 <form class="max-w-md w-full space-y-4 py-12" @submit.prevent="submitFormDetails">
                     <h4>First name</h4>
                     <input
+                        v-model="form.first_name"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="First name"
                         type="text"
@@ -32,6 +32,7 @@
 
                     <h4>Last name</h4>
                     <input
+                        v-model="form.last_name"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="Last name"
                         type="text"
@@ -40,6 +41,7 @@
 
                     <h4>Email</h4>
                     <input
+                        v-model="form.email"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="you@example.com"
                         type="email"
@@ -48,6 +50,7 @@
 
                     <h4>Phone number</h4>
                     <input
+                        v-model="form.phone"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="Phone Number"
                         type="tel"
@@ -56,6 +59,7 @@
 
                     <h4>Subject</h4>
                     <input
+                        v-model="form.subject"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="Subject"
                         type="text"
@@ -64,6 +68,7 @@
 
                     <h4>Message</h4>
                     <textarea
+                        v-model="form.message"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="Write Message"
                         rows="4"
@@ -98,11 +103,18 @@ export default {
     },
 
     methods: {
-        async submitFormDetails() {
+         submitFormDetails() {
             try {
-                const response = await axios.post('/api/contact/submit', this.form);
+                axios.post('/api/contact/submit', this.form);
                 alert(response.data.message);
-                this.form = {name: '', last_name: '', email: '', phone: '', subject: '', message: ''};
+                this.form = {
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                };
             } catch (error) {
                 console.error('Error submitting form:', error);
                 alert('Failed to send the message. Please try again.');
