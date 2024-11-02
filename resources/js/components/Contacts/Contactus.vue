@@ -5,6 +5,10 @@
             <p class="text-sm text-gray-400 mt-2">We’d love to hear from you! Let’s connect.</p>
         </div>
 
+        <div v-if="successMessage" class="bg-green-500 text-white text-center py-2">
+            {{ successMessage }}
+        </div>
+
         <div class="flex h-full w-full">
             <div class="relative w-full lg:w-1/2 flex items-center justify-center">
                 <img src="/assets/images/pink-outfit.jpg" class="h-full w-full object-cover rounded-lg shadow-md" alt="Contact Wand Clothline">
@@ -75,8 +79,9 @@
                         name="message"
                     ></textarea>
 
-                    <button type="submit" class="w-full py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-700">
-                        Submit
+                    <button type="submit" class="w-full py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-700" :disabled="loading">
+                        <span v-if="loading">Loading...</span>
+                        <span v-else>Submit</span>
                     </button>
                 </form>
             </div>
@@ -85,28 +90,31 @@
 </template>
 
 <script>
-
 import axios from "axios";
-export default {
 
+export default {
     data() {
         return {
-            form :{
-                first_name:'',
+            form: {
+                first_name: '',
                 last_name: '',
-                email:'',
-                phone:'',
-                subject:'',
-                message:''
-            }
-        }
+                email: '',
+                phone: '',
+                subject: '',
+                message: ''
+            },
+            successMessage: '',
+            loading: false
+        };
     },
 
     methods: {
-         submitFormDetails() {
+        async submitFormDetails() {
+            this.loading = true;
             try {
-                axios.post('/api/contact/submit', this.form);
-                alert(response.data.message);
+                const response = await axios.post('/api/contact/submit', this.form);
+                console.log(response.data.message);
+
                 this.form = {
                     first_name: '',
                     last_name: '',
@@ -115,14 +123,24 @@ export default {
                     subject: '',
                     message: ''
                 };
+
+                this.successMessage = 'Your message has been successfully submitted!';
+
+                setTimeout(() => {
+                    this.successMessage = '';
+                }, 4000);
+
             } catch (error) {
                 console.error('Error submitting form:', error);
-                alert('Failed to send the message. Please try again.');
+            } finally {
+                this.loading = false;
             }
         }
     }
 }
 </script>
+
+
 
 <style scoped>
 .bg-black {
