@@ -106,14 +106,14 @@ export default {
             successMessage: '',
             loading: false
         };
-        
+
     },
 
     methods: {
-        async submitFormDetails() {
+         submitFormDetails() {
             this.loading = true;
             try {
-                const response = await axios.post('/api/contact/submit', this.form);
+                 axios.post('/api/contact/submit', this.form);
                 console.log(response.data.message);
 
                 this.form = {
