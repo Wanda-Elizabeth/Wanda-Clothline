@@ -15,7 +15,7 @@
             </div>
 
 
-        <div class="flex flex-col justify-center items-center h-full relative z-10 px-4 mb-40">
+        <div class="flex flex-col justify-center items-center h-full relative z-10 px-4 mb-20">
             <h4 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold font-nunito text-center mb-4">
                 Elegance, Redefined for Modern Living
             </h4>
@@ -23,46 +23,64 @@
 
     </div>
 
-<!--            <div class="flex flex-row-reverse  justify-between bg-gray-100 p-10 rounded-lg shadow-lg mb-60">-->
-            <div class="flex flex-row-reverse mb-60">
-                <!-- Image on the Right -->
-                <div class="flex-1  ml-auto">
-                    <img src="/assets/images/bg.jpeg" class="border border-gray-300 rounded-lg h-80 w-64 object-cover shadow-md " alt="Elegant Fashion">
+            <div class="mb-12 p-90">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">Discover Our Latest Styles</h2>
+                <p class="text-center text-gray-600 mb-6 text-sm md:text-base">
+                    Handpicked collections to elevate your wardrobe – from chic denim to bold patterns.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="relative">
+                        <img src="/assets/images/denim.png" alt="Shop Clothing" class="w-full h-56 md:h-64 object-cover rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                            <h3 class="text-white text-xl md:text-2xl font-semibold">Shop Denim Shorts</h3>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="/assets/images/floral.png" alt="Shop Accessories" class="w-full h-56 md:h-64 object-cover rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                            <h3 class="text-white text-xl md:text-2xl font-semibold">Shop Floral Dress</h3>
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="relative">
+                        <img src="/assets/images/stripped.png" alt="Shop Sale Items" class="w-full h-56 md:h-64 object-cover rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                            <h3 class="text-white text-xl md:text-2xl font-semibold">Shop Striped Top</h3>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Text on the Left -->
-                <div class="flex-1 text-center md:text-left">
-                    <h4 class="text-pink-400 text-3xl md:text-4xl lg:text-5xl font-bold font-nunito mb-4">
-                        Elegance
-                    </h4>
-                    <p class="text-gray-600 text-lg mb-4">
-                        Discover elegance with our exclusive collection!
+            </div>
+
+            <div class="flex items-center justify-between bg-gray-100 p-6 md:p-20 rounded-lg shadow-lg mb-20">
+                <div class="flex-1 text-left pr-10 mb-6 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Bold. Comfortable. Confident. Stylish.</h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        At Wanda Clothline, we believe in creating fashion that empowers you to feel your best—bold, confident, and comfortable every day. Our pieces are designed to make a statement and fit perfectly into your lifestyle.
                     </p>
-                    <button class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800">
-                        SHOP NOW
+                    <button class="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-700">
+                        Explore
                     </button>
+                </div>
+
+
+
+                <div class="flex-1 relative">
+                    <div class="relative mt-6 md:mt-0 flex flex-col md:flex-row items-center justify-between">
+                        <img src="/assets/images/img_3.png" class="w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-4 md:mr-10 md:ml-0 ml-0" alt="Bold Image 1">
+                        <img src="/assets/images/comfort.png" class="w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-10 md:ml-10 ml-0" alt="Bold Image 2">
+                        <img src="/assets/images/confident.png" class="absolute top-20 left-0 w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-4 md:mr-10 ml-0" alt="Confident Image 1">
+                        <img src="/assets/images/stylish.png" class="absolute top-20 right-0 w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-10 md:ml-10 ml-0" alt="Confident Image 2">
+                    </div>
+
                 </div>
             </div>
 
-            <div class="flex items-center justify-between bg-gray-100 p-10 rounded-lg shadow-lg">
-                <div class="flex-1">
-                    <img src="/assets/images/bg.jpeg" class="border border-gray-300 rounded-lg h-80 w-64 object-cover shadow-md" alt="Elegant Fashion">
-                </div>
-
-                <div class="flex-1 text-center md:text-left">
-                    <h4 class="text-pink-400 text-3xl md:text-4xl lg:text-5xl font-bold font-nunito mb-4">
-                        Elegance
-                    </h4>
-                    <p class="text-gray-600 text-lg mb-4">
-                        Uncover timeless styles and elevate your fashion sense.
-                    </p>
-                    <button class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800">
-                        EXPLORE COLLECTION
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
+
 </template>
 
 
