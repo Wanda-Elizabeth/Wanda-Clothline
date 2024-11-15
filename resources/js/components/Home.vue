@@ -33,6 +33,9 @@
             </div>
         </div>
 
+        <footer class="bg-pink-300 w-full py-3 text-sm text-white text-center fixed bottom-0">
+            &copy; 2024 Wanda's Cute Clothing Line. All rights reserved.
+        </footer>
         <router-view class="mb-4"></router-view>
 
 <!--        <footer class="bg-pink-300 w-full py-3 text-sm text-white text-center fixed bottom-0">-->
