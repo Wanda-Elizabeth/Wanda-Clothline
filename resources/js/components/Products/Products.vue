@@ -1,134 +1,53 @@
 <template>
     <div class="flex flex-col items-center bg-gray-100">
-<h4>Products</h4>
+        <h4 class="text-xl font-semibold mb-4">Products</h4>
+        <div v-if="items.length === 0" class="text-center text-gray-500">
+            <p>No products found for this category.</p>
+        </div>
         <div class="container mx-auto p-5 flex flex-wrap justify-center">
-            <div v-for="item in items" :key="item.name" class="item border border-gray-300 rounded-lg bg-white shadow-md m-5 p-4 w-64">
-                <img :src="item.image" :alt="item.name" class="max-w-full rounded-lg mb-2">
+            <div
+                v-for="item in items"
+                :key="item.id"
+                class="item border border-gray-300 rounded-lg bg-white shadow-md m-5 p-4 w-64"
+            >
+                <img :src="item.path" :alt="item.name" class="max-w-full rounded-lg mb-2">
                 <h3 class="text-pink-500 text-lg">{{ item.name }}</h3>
-                <p class="text-gray-600">{{ item.description }}</p>
+                <p class="text-gray-600">{{ item.category }}</p>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
     name: 'Products',
-    components: {},
     data() {
         return {
-            items: [
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-                {
-                    name: "Floral Dress",
-                    image: "https://images.pexels.com/photos/970393/pexels-photo-970393.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "A beautiful floral dress perfect for sunny days.",
-                },
-                {
-                    name: "Striped Top",
-                    image: "https://images.pexels.com/photos/5405652/pexels-photo-5405652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    description: "A cute and comfy striped top for casual wear.",
-                },
-                {
-                    name: "Denim Shorts",
-                    image: "https://images.pexels.com/photos/17135740/pexels-photo-17135740/free-photo-of-new-women-s-shorts.jpeg?auto=compress&cs=tinysrgb&w=300",
-                    description: "Stylish denim shorts for a relaxed look.",
-                },
-            ]
+            items: [], // Holds product data
         };
-    }
-}
+    },
+    watch: {
+        // Re-fetch data when route changes
+        '$route.params.category': 'fetchProducts',
+    },
+    mounted() {
+        this.fetchProducts();
+    },
+    methods: {
+        fetchProducts() {
+            axios.get('/api/images', {
+                params: {
+                    category: this.$route.params.category,
+                },
+            }).then(response => {
+                this.items = response.data;
+            });
+        },
+
+    },
+};
 </script>
 
 <style>

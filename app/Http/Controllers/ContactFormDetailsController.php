@@ -28,7 +28,7 @@ class ContactFormDetailsController extends Controller
         Log::info('Contact Form Data:', $validatedData);
         $contactForm = ContactFormDetails::create($validatedData);
 
-        Mail::to('wandawairimu@gmail.com')->queue(new ContactFormMail($validatedData));
+        Mail::to('wandaelizabeth1334@gmail.com')->queue(new ContactFormMail($validatedData));
 
         return response()->json(['message' => 'Email has been queued for sending']);
     }

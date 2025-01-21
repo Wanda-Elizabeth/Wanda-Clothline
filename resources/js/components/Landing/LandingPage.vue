@@ -31,27 +31,38 @@
                 </p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div class="relative">
-                        <img src="/assets/images/denim.png" alt="Shop Clothing" class="w-full h-56 md:h-64 object-cover rounded-lg">
+                    <div class="relative cursor-pointer" @click="$router.push('/products/shorts')">
+                        <img
+                            src="/assets/images/denim.png"
+                            alt="Shop Denim Shorts"
+                            class="w-full h-56 md:h-64 object-cover rounded-lg"
+                        />
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
                             <h3 class="text-white text-xl md:text-2xl font-semibold">Shop Denim Shorts</h3>
                         </div>
                     </div>
-                    <div class="relative">
-                        <img src="/assets/images/floral.png" alt="Shop Accessories" class="w-full h-56 md:h-64 object-cover rounded-lg">
+                    <div class="relative cursor-pointer" @click="$router.push('/products/dresses')">
+                        <img
+                            src="/assets/images/floral.png"
+                            alt="Shop Floral Dress"
+                            class="w-full h-56 md:h-64 object-cover rounded-lg"
+                        />
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
                             <h3 class="text-white text-xl md:text-2xl font-semibold">Shop Floral Dress</h3>
                         </div>
                     </div>
-                    <!-- Column 3 -->
-                    <div class="relative">
-                        <img src="/assets/images/stripped.png" alt="Shop Sale Items" class="w-full h-56 md:h-64 object-cover rounded-lg">
+                    <div class="relative cursor-pointer" @click="$router.push('/products/tops')">
+                        <img
+                            src="/assets/images/stripped.png"
+                            alt="Shop Striped Top"
+                            class="w-full h-56 md:h-64 object-cover rounded-lg"
+                        />
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
                             <h3 class="text-white text-xl md:text-2xl font-semibold">Shop Striped Top</h3>
                         </div>
                     </div>
-                </div>
 
+            </div>
             </div>
 
             <div class="flex items-center justify-between bg-gray-100 p-6 md:p-20 rounded-lg shadow-lg mb-20">
@@ -72,7 +83,7 @@
                         <img src="/assets/images/img_3.png" class="w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-4 md:mr-10 md:ml-0 ml-0" alt="Bold Image 1">
                         <img src="/assets/images/comfort.png" class="w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-10 md:ml-10 ml-0" alt="Bold Image 2">
                         <img src="/assets/images/confident.png" class="absolute top-20 left-0 w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-4 md:mr-10 ml-0" alt="Confident Image 1">
-                        <img src="/assets/images/stylish.png" class="absolute top-20 right-0 w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-10 md:ml-10 ml-0" alt="Confident Image 2">
+                        <img src="/assets/images/comfortable.png" class="absolute top-20 right-0 w-80 md:w-80 h-60 object-cover rounded-lg shadow-md mb-10 md:ml-10 ml-0" alt="Confident Image 2">
                     </div>
 
                 </div>

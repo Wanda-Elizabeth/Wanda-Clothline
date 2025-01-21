@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Contactus from "../components/Contacts/Contactus.vue";
 import Products from "../components/Products/Products.vue";
 import LandingPage from "../components/Landing/LandingPage.vue";
+import ImagePost from "../ImagePost.vue";
 
 
 const Home = () => import("../components/Home.vue");
@@ -27,11 +28,22 @@ const routes = [
         path: "/products",
         name: "Products",
         component: Products,
+        props: true,
+
     },
+    { path: '/products/:category',
+        component: Products
+    },
+
     {
         path: "/contactus",
         name: "Contactus",
         component: Contactus,
+    },
+    {
+        path: '/image-upload',
+        name: 'ImageUpload',
+        component: ImagePost,
     },
 ];
 
