@@ -36,16 +36,16 @@ export default {
         this.fetchProducts();
     },
     methods: {
-        fetchProducts() {
-            axios.get('/api/images', {
-                params: {
-                    category: this.$route.params.category,
-                },
-            }).then(response => {
+        async fetchProducts() {
+            try {
+                const category = this.$route.params.category;
+                const response = await axios.get(category ? `/api/products/${category}` : '/api/images');
                 this.items = response.data;
-            });
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                this.items = []; // Clear items if there's an error
+            }
         },
-
     },
 };
 </script>
