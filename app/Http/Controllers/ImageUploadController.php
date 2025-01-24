@@ -17,7 +17,8 @@ class ImageUploadController extends Controller
 
         $image = $request->file('image');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $imagePath = $image->storeAs('public/images', $imageName);
+        $imagePath = $image->storeAs('images', $imageName, 'public');
+
 
         $category = Categories::find($request->category);
         $categorySlug = $category ? $category->slug : 'default_name';
