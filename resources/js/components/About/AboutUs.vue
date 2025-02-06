@@ -10,7 +10,6 @@
             <div class="absolute inset-0 bg-black opacity-50"></div>
         </section>
 
-        <!-- Our Story & Mission -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20 max-w-6xl mx-auto">
             <div>
                 <img src="/assets/images/img_6.png" alt="Our Story" class="w-full rounded-lg shadow-lg" />
@@ -47,7 +46,6 @@
             </div>
         </section>
 
-        <!-- Meet Our Experts -->
         <section class="text-center py-20">
             <h2 class="text-3xl font-bold text-center mb-8">Meet the Team</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 max-w-6xl mx-auto">
@@ -69,7 +67,6 @@
             </div>
         </section>
 
-        <!-- Creative Section -->
         <section class="bg-gray-100 py-20">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-4xl font-bold mb-8">Join Our Fashion Community</h2>
